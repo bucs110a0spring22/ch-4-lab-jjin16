@@ -9,7 +9,7 @@ import math
 def drawSineCurve(dart):
   """
   draws the sine curve 
-  arg: 
+  arg: turtle object
   return: ()none
   """
   dart.pu()
@@ -28,15 +28,15 @@ def drawSineCurve(dart):
 #part B
 def setupWindow(wn):
   """
-  sets up the carvas(window) size so the graph is easier to view
-  arg: 
+  sets up the canvas(window) size so the graph is easier to view
+  arg: window object
   return: ()none
   """
   wn.setworldcoordinates(-360-10, -10, 360+10, 11)
 def setupAxis(dart):
   """
   draws the x-y axis for the graph
-  arg: 
+  arg: turtle object 
   return: ()none
   """
   dart.pencolor("black")
