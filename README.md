@@ -8,18 +8,20 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- The program draw
+ The program draws the sine graph, cosine graph, and tangent graph on the appropriate canvas size.
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 0
 
-Grace days remaining: < # >/5
+Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ When drawing the tangent graph, the turtle object draws an incomplete tangent graph.
 
 ## REFERENCES:
- < List any outside resources used >
+ 1. https://docs.python.org/3/library/turtle.html
+ 2. https://docs.python.org/3/library/math.html
+ 3. https://www.w3schools.com/python/python_for_loops.asp
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ I have already talked to the lab TA about the tangent graph. Seems like this is the best that the turtle module can do to draw the tangent lines. 

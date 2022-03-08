@@ -12,18 +12,15 @@ def drawSineCurve(dart):
   arg: turtle object
   return: ()none
   """
+  degree_max= 360
+  degree_min= -360
   dart.pu()
   dart.goto(0,0)
   dart.pencolor("blue")
   dart.pd()
-  #accumulator_for_x= 0
-  for degree in range (-360, 360+1):
+  for degree in range (degree_min, degree_max):
     y = math.sin(math.radians(degree))
-    #x= accumulator_for_x
-    #print(x)#debug
-    #print(y)#debug
     dart.goto(degree, y)
-    #accumulator_for_x+= 1
   dart.pu()
 #part B
 def setupWindow(wn):
@@ -32,64 +29,62 @@ def setupWindow(wn):
   arg: window object
   return: ()none
   """
-  wn.setworldcoordinates(-360-10, -10, 360+10, 11)
+  degree_max= 360
+  degree_min= -360
+  y_max= 10
+  y_min= -10
+  wn.setworldcoordinates(degree_min,y_min, degree_max, y_max)
 def setupAxis(dart):
   """
   draws the x-y axis for the graph
   arg: turtle object 
   return: ()none
   """
+  degree_max= 360
+  degree_min= -360
+  y_max= 10
+  y_min= -10
   dart.pencolor("black")
   dart.pd()
-  dart.goto(0, 10)
-  dart.goto(0,-10)
+  dart.goto(0, y_max)
+  dart.goto(0,y_min)
   dart.goto(0,0)
-  dart.goto(360+10, 0)
-  dart.goto(-360-10,0)
+  dart.goto(degree_max, 0)
+  dart.goto(degree_min,0)
   dart.goto(0,0)
   dart.pu()
 def drawCosineCurve(dart):
   """
   draws the cosine curve 
-  arg: 
+  arg: turtle object
   return: ()none
   """
+  degree_max= 360
+  degree_min= -360
   dart.pu()
-  #dart.goto(-360,1)
   dart.pencolor("red")
-  #dart.pd()
-  #accumulator_for_x= 0
-  for degree in range (-360, 360+1):
+  for degree in range (degree_min, degree_max):
     y = math.cos(math.radians(degree))  
-    if degree == -360:
+    if degree == degree_min:
         dart.goto(degree, y)
         dart.pd()
-    #dart.pd()
-    #y = math.cos(math.radians(degree))
-    #x= accumulator_for_x
-    #print(x)#debug
-    #print(y)#debug
     dart.goto(degree, y)
-    #accumulator_for_x+= 1
   dart.pu()
 def drawTangentCurve(dart):
   """
   draws the tangent curve 
-  arg: 
+  arg: turtle object
   return: ()none
   """
+  degree_max= 360
+  degree_min= -360
   dart.pu()
   dart.goto(0,0)
   dart.pencolor("purple")
   dart.pd()
-  #accumulator_for_x= 0
-  for degree in range (-360, 360+1):
+  for degree in range (degree_min, degree_max):
     y= math.tan(math.radians(degree))
-    #x= accumulator_for_x
-    #print(x)#debug
-    #print(y)#debug
     dart.goto(degree, y)
-    #accumulator_for_x+= 1
   dart.pu()
 ##########  Do Not Alter Any Code Past Here ########
 def main():
