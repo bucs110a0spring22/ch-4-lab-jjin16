@@ -5,6 +5,8 @@ import math
 # If you have anything outside of a function, 
 # then you do not fully understand functions
 # and should review how they work or ask for help
+ORIGIN=(0,0)
+RIGHT_ANGLE=90
 #part A
 def drawSineCurve(dart,degree_max= 360,degree_min= -360):
   """
@@ -13,7 +15,7 @@ def drawSineCurve(dart,degree_max= 360,degree_min= -360):
   return: ()none
   """
   dart.pu()
-  dart.goto(0,0)
+  dart.goto(ORIGIN)
   dart.pencolor("blue")
   dart.pd()
   for degree in range (degree_min, degree_max):
@@ -36,12 +38,12 @@ def setupAxis(dart,degree_max= 360,degree_min= -360,y_max= 10,y_min= -10):
   """
   dart.pencolor("black")
   dart.pd()
-  dart.goto(0, y_max)
-  dart.goto(0,y_min)
-  dart.goto(0,0)
-  dart.goto(degree_max, 0)
-  dart.goto(degree_min,0)
-  dart.goto(0,0)
+  dart.goto(ORIGIN[0], y_max)
+  dart.goto(ORIGIN[0],y_min)
+  dart.goto(ORIGIN)
+  dart.goto(degree_max, ORIGIN[1])
+  dart.goto(degree_min,ORIGIN[1])
+  dart.goto(ORIGIN)
   dart.pu()
 def drawCosineCurve(dart,degree_max= 360,degree_min= -360):
   """
@@ -65,7 +67,7 @@ def drawTangentCurve(dart,degree_max= 360,degree_min= -360):
   return: ()none
   """
   dart.pu()
-  dart.goto(0,0)
+  dart.goto(ORIGIN)
   dart.pencolor("purple")
   dart.pd()
   for degree in range (degree_min, degree_max):
