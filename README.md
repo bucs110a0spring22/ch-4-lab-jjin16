@@ -22,4 +22,4 @@ The program asks the user whether they want to see a drawing of sans or not. The
  3. https://www.pinterest.com/pin/545498573597599947/
 
 ## MISCELLANEOUS COMMENTS:
- none
+ For the extremely long lines of code in draw_sans() function, most of the codes are unique in their parameters to decribe the position and the color of each pixel in the drawing.

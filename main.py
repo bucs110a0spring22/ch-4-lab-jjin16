@@ -76,6 +76,11 @@ def drawTangentCurve(dart,degree_max= 360,degree_min= -360):
     dart.goto(degree, y)
   dart.pu()
 def draw_pixel_of_same_color(dart, color="black", line_length=0, pixel_size=5):
+  """
+  draws the horizontal line of sans drawing 
+  arg: (dart)turtle object, (color)string that represents the color of the horizontal line, (line_length)the length of the horizontal line, (pixel_size) size of the pixel in the pixel drawing.
+  return: ()none
+  """
   dart.pencolor(color)
   dart.pd()
   dart.fillcolor(color)
@@ -90,14 +95,29 @@ def draw_pixel_of_same_color(dart, color="black", line_length=0, pixel_size=5):
   dart.pu()
   dart.fd(line_length*pixel_size)
 def go_empty_pixel_line(dart, line_length=0, pixel_size=5):
-    dart.pu()
-    dart.fd(line_length*pixel_size)
+  """
+  moves the turtle object without drawing, represents the no color pixels 
+  arg: (dart)turtle object,(line_length)the length of the horizontal line, (pixel_size) size of the pixel in the pixel drawing.
+  return: ()none
+  """
+  dart.pu()
+  dart.fd(line_length*pixel_size)
 def draw_line_of_pixels(dart, line_length=0, color="black", pixel_size=5):
-    if color=="empty":
-        go_empty_pixel_line(dart, line_length)
-    else:
-        draw_pixel_of_same_color(dart, color, line_length, pixel_size)
+  """
+  draws the line of pixels with colors depending on the parameters.
+  arg: (dart)turtle object,(line_length)the length of the horizontal line,(color)string that represents the color of the horizontal line (pixel_size) size of the pixel in the pixel drawing.
+  return: ()none
+  """
+  if color=="empty":
+    go_empty_pixel_line(dart, line_length)
+  else:
+    draw_pixel_of_same_color(dart, color, line_length, pixel_size)
 def switch_lane(dart, pixel_size=5):
+  """
+  moves the turtle object to the next horizontal line of the drawing(downwards)
+  arg: (dart)turtle object, (pixel_size) size of the pixel in the pixel drawing.
+  return: ()none
+  """
   dart.pu()
   dart.rt(RIGHT_ANGLE)
   dart.fd(pixel_size)
@@ -106,6 +126,11 @@ def switch_lane(dart, pixel_size=5):
   dart.goto(ORIGIN[0], dart_position_y)
   dart.lt(RIGHT_ANGLE)
 def ask_user_to_see_drawing():
+  """
+  asks the user if they want to see a drawing of sans.
+  arg: ()none
+  return: boolean True/False
+  """
   user_answer=input("Hey, do you want to see a picture of sans? y/n:")
   if user_answer=="y" or user_answer=="Y":
     print("Okay!")
@@ -114,60 +139,52 @@ def ask_user_to_see_drawing():
     print("are you sure? you're missing out!")
     return False
 def draw_sans():
-    wn=turtle.Screen()
-    wn.setworldcoordinates(0,-150,115,0)
-    wn.bgcolor("grey")
-    dart= turtle.Turtle()
-    dart.speed(0)
-    draw_line_of_pixels(dart,7,"empty")
-    draw_line_of_pixels(dart,9,"black")
-    switch_lane(dart)#line 1 finish
-    draw_line_of_pixels(dart,5,"empty")
-    draw_line_of_pixels(dart,2,"black")
-    draw_line_of_pixels(dart,9,"white")
-    draw_line_of_pixels(dart,2,"black")
-    switch_lane(dart)#line 2 finish
-    for i in range(2):
-      draw_line_of_pixels(dart,4,"empty")
-      draw_line_of_pixels(dart,1,"black")
-      draw_line_of_pixels(dart,13,"white")
-      draw_line_of_pixels(dart,1,"black")
-      switch_lane(dart)#line 3 finish
-    #draw_line_of_pixels(dart,4,"empty")
-    #draw_line_of_pixels(dart,1,"black")
-    #draw_line_of_pixels(dart,13,"white")
-    #draw_line_of_pixels(dart,1,"black")
-    #switch_lane(dart)#line 4 finish
+  """
+  assembles the defined functions and adds specific parameters to draw the picture of sans.
+  arg: ()none
+  return: ()none
+  """
+  wn=turtle.Screen()
+  wn.setworldcoordinates(0,-150,115,0)
+  wn.bgcolor("grey")
+  dart= turtle.Turtle()
+  dart.speed(0)
+  draw_line_of_pixels(dart,7,"empty")
+  draw_line_of_pixels(dart,9,"black")
+  switch_lane(dart)#line 1 finish
+  draw_line_of_pixels(dart,5,"empty")
+  draw_line_of_pixels(dart,2,"black")
+  draw_line_of_pixels(dart,9,"white")
+  draw_line_of_pixels(dart,2,"black")
+  switch_lane(dart)#line 2 finish
+  for i in range(2):
+    draw_line_of_pixels(dart,4,"empty")
+    draw_line_of_pixels(dart,1,"black")
+    draw_line_of_pixels(dart,13,"white")
+    draw_line_of_pixels(dart,1,"black")
+    switch_lane(dart)#line 3 finish
     draw_line_of_pixels(dart,3,"empty")
     draw_line_of_pixels(dart,1,"black")
     draw_line_of_pixels(dart,15,"white")
     draw_line_of_pixels(dart,1,"black")
     switch_lane(dart)#line 5 finish
-    for i in range(2):
-      draw_line_of_pixels(dart,3,"empty")
-      draw_line_of_pixels(dart,1,"black")
-      draw_line_of_pixels(dart,2,"white")
-      draw_line_of_pixels(dart,3,"black")
-      draw_line_of_pixels(dart,5,"white")
-      draw_line_of_pixels(dart,3,"black")
-      draw_line_of_pixels(dart,2,"white")
-      draw_line_of_pixels(dart,1,"black")
-      switch_lane(dart)#line 6 finish
-    #draw_line_of_pixels(dart,3,"empty")
-    #draw_line_of_pixels(dart,1,"black")
-    #draw_line_of_pixels(dart,2,"white")
-    #draw_line_of_pixels(dart,3,"black")
-    #draw_line_of_pixels(dart,5,"white")
-    #draw_line_of_pixels(dart,3,"black")
-    #draw_line_of_pixels(dart,2,"white")
-    #draw_line_of_pixels(dart,1,"black")
-    #switch_lane(dart)#line 7 finish
+  for i in range(2):
     draw_line_of_pixels(dart,3,"empty")
     draw_line_of_pixels(dart,1,"black")
     draw_line_of_pixels(dart,2,"white")
     draw_line_of_pixels(dart,3,"black")
+    draw_line_of_pixels(dart,5,"white")
+    draw_line_of_pixels(dart,3,"black")
     draw_line_of_pixels(dart,2,"white")
     draw_line_of_pixels(dart,1,"black")
+    switch_lane(dart)#line 6 finish
+    #line 7 finish
+  draw_line_of_pixels(dart,3,"empty")
+  draw_line_of_pixels(dart,1,"black")
+  draw_line_of_pixels(dart,2,"white")
+  draw_line_of_pixels(dart,3,"black")
+  draw_line_of_pixels(dart,2,"white")
+  draw_line_of_pixels(dart,1,"black")
     draw_line_of_pixels(dart,2,"white")
     draw_line_of_pixels(dart,3,"black")
     draw_line_of_pixels(dart,2,"white")
@@ -361,6 +378,11 @@ def draw_sans():
     #line 30 finish
     #wn.exitonclick()
 def ask_to_draw_sans():
+  """
+  calls the function that asks the user if they want to see a drawing of sans. then responds depending on the user's answer
+  arg: ()none
+  return: ()none
+  """
   time_waiting=3
   user_decision= ask_user_to_see_drawing()
   if user_decision== True:
