@@ -367,7 +367,7 @@ def ask_to_draw_sans():
     draw_sans()
   else:
     time.sleep(time_waiting)
-    print("I'm sorry. You have no choice but to look at this sans drawing. ;)")
+    print("I'm sorry. You have no choice but to look at this sans drawing of sans. ;)")
     draw_sans()
 ##########  Do Not Alter Any Code Past Here ########
 def main():

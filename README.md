@@ -1,27 +1,25 @@
 #### CS 110
-# Chapter 4 - Lab - Functions
-
-### [Assignment Description](https://docs.google.com/document/d/1V20D_upUX4MO8YmskKlRB25Yu2pCEv3-h8z4EAfrSno/edit?usp=sharing)
+# Midterm - Python Programming
 
 ***
 
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- The program draws the sine graph, cosine graph, and tangent graph on the appropriate canvas size.
+What did you clean up?:I moved the variables that are repeatedtly defined in a function into the main() and added parameters to all the functions I defined to make functions more reusable.
 
-## GRACE DAYS
-Grace days used for this assignment: 0
+Summary of function(s) added:
+I added functions that together draws a pixled drawing of sans, a character from the video game "Undertale".
 
-Grace days remaining: 5/5
-
+Summary of Feature Added:
+The program asks the user whether they want to see a drawing of sans or not. Then shows the drawing reguardless of their answer, followed by a comment depending on the user's input.
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- When drawing the tangent graph, the turtle object draws an incomplete tangent graph.
+ none
 
 ## REFERENCES:
- 1. https://docs.python.org/3/library/turtle.html
- 2. https://docs.python.org/3/library/math.html
- 3. https://www.w3schools.com/python/python_for_loops.asp
+ 1. https://docs.python.org/3/library/turtle.html#turtle.fillcolor
+ 2. https://www.programiz.com/python-programming/variables-constants-literals
+ 3. https://www.pinterest.com/pin/545498573597599947/
 
 ## MISCELLANEOUS COMMENTS:
- I have already talked to the lab TA about the tangent graph. Seems like this is the best that the turtle module can do to draw the tangent lines. 
+ none
