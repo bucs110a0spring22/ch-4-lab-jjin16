@@ -6,14 +6,12 @@ import math
 # then you do not fully understand functions
 # and should review how they work or ask for help
 #part A
-def drawSineCurve(dart):
+def drawSineCurve(dart,degree_max= 360,degree_min= -360):
   """
   draws the sine curve 
   arg: turtle object
   return: ()none
   """
-  degree_max= 360
-  degree_min= -360
   dart.pu()
   dart.goto(0,0)
   dart.pencolor("blue")
@@ -23,27 +21,19 @@ def drawSineCurve(dart):
     dart.goto(degree, y)
   dart.pu()
 #part B
-def setupWindow(wn):
+def setupWindow(wn,degree_max= 360,degree_min= -360,y_max= 10,y_min= -10):
   """
   sets up the canvas(window) size so the graph is easier to view
   arg: window object
   return: ()none
   """
-  degree_max= 360
-  degree_min= -360
-  y_max= 10
-  y_min= -10
   wn.setworldcoordinates(degree_min,y_min, degree_max, y_max)
-def setupAxis(dart):
+def setupAxis(dart,degree_max= 360,degree_min= -360,y_max= 10,y_min= -10):
   """
   draws the x-y axis for the graph
   arg: turtle object 
   return: ()none
   """
-  degree_max= 360
-  degree_min= -360
-  y_max= 10
-  y_min= -10
   dart.pencolor("black")
   dart.pd()
   dart.goto(0, y_max)
@@ -53,14 +43,12 @@ def setupAxis(dart):
   dart.goto(degree_min,0)
   dart.goto(0,0)
   dart.pu()
-def drawCosineCurve(dart):
+def drawCosineCurve(dart,degree_max= 360,degree_min= -360):
   """
   draws the cosine curve 
   arg: turtle object
   return: ()none
   """
-  degree_max= 360
-  degree_min= -360
   dart.pu()
   dart.pencolor("red")
   for degree in range (degree_min, degree_max):
@@ -70,14 +58,12 @@ def drawCosineCurve(dart):
         dart.pd()
     dart.goto(degree, y)
   dart.pu()
-def drawTangentCurve(dart):
+def drawTangentCurve(dart,degree_max= 360,degree_min= -360):
   """
   draws the tangent curve 
   arg: turtle object
   return: ()none
   """
-  degree_max= 360
-  degree_min= -360
   dart.pu()
   dart.goto(0,0)
   dart.pencolor("purple")
@@ -88,19 +74,22 @@ def drawTangentCurve(dart):
   dart.pu()
 ##########  Do Not Alter Any Code Past Here ########
 def main():
-    #Part A
-    wn = turtle.Screen()
-    wn.tracer(5)
-    dart = turtle.Turtle()
-    dart.speed(0)
-    drawSineCurve(dart)
-
-    #Part B
-    setupWindow(wn)
-    setupAxis(dart)
-    dart.speed(0)
-    drawSineCurve(dart)
-    drawCosineCurve(dart)
-    drawTangentCurve(dart)
-    wn.exitonclick()
+  degree_max= 360
+  degree_min= -360
+  y_max= 10
+  y_min= -10
+  #Part A
+  wn = turtle.Screen()
+  wn.tracer(5)
+  dart = turtle.Turtle()
+  dart.speed(0)
+  drawSineCurve(dart,degree_max,degree_min)
+  #Part B
+  setupWindow(wn,degree_max,degree_min,y_max,y_min)
+  setupAxis(dart,degree_max,degree_min,y_max,y_min)
+  dart.speed(0)
+  drawSineCurve(dart,degree_max,degree_min)
+  drawCosineCurve(dart,degree_max,degree_min)
+  drawTangentCurve(dart,degree_max,degree_min)
+  wn.exitonclick()
 main()
